@@ -168,6 +168,12 @@
       font-size: 0.95em;
     }
 
+    .work .meta {
+      font-size: 0.85em;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
     .work .point {
       color: #555;
     }
@@ -235,6 +241,7 @@
   <div class="container">
     <header>
       <h1>稲垣真穂</h1>
+      <p>愛知工業大学 経営学部 経営情報システム専攻 3年（2028年3月卒業予定）</p>
       <p>E-mail：<a href="mailto:inagaki.aikou@gmail.com">inagaki.aikou@gmail.com</a></p>
       <p>GitHub：<a href="https://github.com/manahoinagaki">github.com/manahoinagaki</a></p>
     </header>
@@ -250,6 +257,8 @@
       <div class="works">
         <article class="work">
           <h3>大学祭 脱出ゲーム運営アプリ</h3>
+          <p class="meta">2026年 / 個人開発（企画内容は大学祭の企画担当と相談）</p>
+          <p>前年の整理券アプリは1台のパソコンでしか操作できず、受付が約30分で回らなくなりました。今年は私が引き継ぎ、複数の端末でリアルタイムに共有できる形に作り直しました。</p>
           <p>大学祭の脱出ゲーム企画で、スタッフが複数のスマホから同時に整理券の発行・呼び出し・部屋の割り当てを行い、来場者は自分のスマホで待ち状況を確認できるWebアプリです。</p>
           <p class="point">スタッフ約11人が同時に利用し、2日間で約190件の整理券を一度も止まらずに運用しました。同時操作による部屋の二重割り当てを、Firestoreのトランザクションによる排他制御で防ぎ、複数ブラウザを同時に動かす負荷テストで検証しています。</p>
           <ul class="tags">
@@ -269,7 +278,8 @@
 
         <article class="work">
           <h3>家族の車の走行距離記録アプリ</h3>
-          <p>家族で使う車の予約と、走行距離の記録を行うアプリです。メーターを写真に撮ると、数字を自動で読み取ります。</p>
+          <p class="meta">2026年 / 個人開発・家族4人で利用中</p>
+          <p>家族4人・車3台で「誰が・どの車で・どれだけ走ったか」を記録し、車の予定も共有できるWebアプリです。メーターを写真に撮ると、数字を自動で読み取ります。</p>
           <p class="point">OCRの読み取り結果を、前回の記録との差から妥当な値だけに絞り込み、読み間違いを減らしています。利用できるのは登録した家族のアカウントだけで、データベース側のルールで制限しています。</p>
           <ul class="tags">
             <li>React</li><li>Firebase Authentication</li><li>Security Rules</li><li>tesseract.js</li><li>PWA</li>
@@ -278,6 +288,7 @@
 
         <article class="work">
           <h3>catlendar（予定・家計簿の共有アプリ）</h3>
+          <p class="meta">2024年〜 / 個人開発（開発中）</p>
           <p>グループで予定と家計簿を共有できるスマホアプリです（開発中）。HTML/CSSでの試作、Next.js＋FastAPIでのWeb版を経て、Flutterで作り直しています。</p>
           <p class="point">招待コードでグループに参加でき、同じグループのメンバーだけがデータを読めるように、認証とデータベース側のルールで制限しています。</p>
           <ul class="tags">
@@ -287,7 +298,8 @@
 
         <article class="work">
           <h3>適性検査トレーニングアプリ</h3>
-          <p>適性検査（GAB・CAB）を、制限時間・前の問題に戻れない・画面内の電卓といった本番に近い形式で練習できる、自分用のWebアプリです。</p>
+          <p class="meta">2026年 / 個人開発・公開して自分の就活で利用中</p>
+          <p>適性検査（GAB・CAB・SPI・一般常識、約3,200問）を、制限時間・前の問題に戻れない・画面内の電卓といった本番に近い形式で練習できる、自分用のWebアプリです。</p>
           <p class="point">問題データはアプリから書き込めないようにし、登録は管理用スクリプトだけが行う設計にしました。答え合わせや問題生成の処理は単体テストで確認しています。</p>
           <ul class="tags">
             <li>React</li><li>TypeScript</li><li>Firebase</li><li>Vitest</li><li>zod</li>
@@ -313,8 +325,13 @@
       <h4>自身の担当</h4>
       <p>農業分野を担当しました。Google Earth EngineでSentinel-2（光学）、Sentinel-1（レーダー）、ERA5（気象）のデータを取得し、米国のトウモロコシ畑の時系列データを整えて、植生指数（NDVI）と米国農務省の収穫量統計との相関（0.475）を分析しました。</p>
       <p>当初は愛知県の水田を対象にしましたが、水田が衛星の解像度に対して小さく、ソーラーパネルや海まで水田と判定してしまいました。そのため、畑が大規模で収穫量の統計も公開されている米国に対象を変えました。</p>
-      <p>発表後は、NDVIだけでは精度に限界があったため、対象を5州25地点に広げ、気象・レーダー・作付状況を月ごとの特徴量にした機械学習（ランダムフォレスト）による収穫量予測に発展させています。</p>
+      <p>発表後は、NDVIだけでは精度に限界があったため、対象をコーンベルト5州25地点に広げ、気象・レーダー・作付状況を月ごとの特徴量にした機械学習（ランダムフォレスト）による収穫量予測に発展させました。欠けているデータの補完や標準化などの前処理も行っています。</p>
       <p>製造業分野（工場駐車場の車両密度）は指導教員による解析で、両分野をまとめた研究全体を私が学会で発表しました。</p>
+
+      <h3>現在の取り組み：DFMを使った予測モデルへの改良</h3>
+      <p>学会発表時のモデルは、多数の観測データをそのまま機械学習に入れていました。現在は、経済分析で使われるダイナミックファクターモデル（DFM）を間に挟み、気温・降水量・日射量・土壌水分など多くの項目から、収量に効く共通の動き（因子）だけを取り出してから予測する形に改良しています。項目を圧縮することで、欠損やノイズの影響を減らすことが狙いです。</p>
+      <p>まず、答えが分かっている乱数データでDFMを検証し、10本の観測データから隠れた波を相関0.991で取り戻せることを確認しました。現在は、世界全体をカバーする気象データ（ERA5-Land）と、米国農務省の作物分布図（CDL）でトウモロコシ畑を自動で選ぶ仕組みを使い、実データへの適用を進めています。将来は日本の作物にも広げる計画です。</p>
+      <p class="tags-line">使用技術：Python, statsmodels, pandas, Google Earth Engine</p>
 
       <h3>研究実績</h3>
       <ul>
@@ -327,7 +344,7 @@
       <h2>スキルセット</h2>
       <dl class="skills">
         <dt>よく使っている</dt>
-        <dd>Python（pandas, matplotlib）, Google Earth Engine, React, Firebase（Cloud Firestore）, HTML/CSS, JavaScript, Git/GitHub</dd>
+        <dd>Python（pandas, matplotlib, statsmodels）, Google Earth Engine, React, Firebase（Cloud Firestore）, HTML/CSS, JavaScript, Git/GitHub</dd>
         <dt>使ったことがある</dt>
         <dd>TypeScript, Next.js, Flutter (Dart), Firebase（Authentication, Security Rules, Hosting）, FastAPI, Flask, SQLite, scikit-learn, Vitest, Playwright, GitHub Actions</dd>
       </dl>
